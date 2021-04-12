@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name:  bu-wksp-pam-tool
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bu-wksp-pam-tool
+  name: bu-wksp-pam-tool
+  namespace: bu-wksp-pam-tool
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bu-wksp-pam-tool
+  template:
+    metadata:
+      labels:
+        app: bu-wksp-pam-tool
+    spec:
+      containers:
+      - name: bu-wksp-pam-tool-service
+        image: quay.io/osevg/workshopper:latest
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8080
+        env:
+        - name: CONTENT_URL_PREFIX
+          value: "https://raw.githubusercontent.com/kmacedovarela/tooling-workshop/master/"
+        - name: WORKSHOPS_URLS
+          value: "https://raw.githubusercontent.com/kmacedovarela/tooling-workshop/master/_tooling_workshop.yml"
+        - name: LOG_TO_STDOUT
+          value: "true"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bu-wksp-pam-tool-service
+  namespace: bu-wksp-pam-tool
+  labels:
+    app: bu-wksp-pam-tool-service
+spec:
+  ports:
+  - name: http
+    port: 8080
+  selector:
+    app: bu-wksp-pam-tool
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+    name: bu-wksp-pam-tool-route
+    namespace: bu-wksp-pam-tool
+    labels:
+      app: bu-wksp-pam-tool
+spec:
+  port:
+    targetPort: http
+  to:
+      kind: Service
+      name: bu-wksp-pam-tool-service

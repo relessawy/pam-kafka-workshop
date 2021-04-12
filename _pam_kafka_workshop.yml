@@ -1,0 +1,13 @@
+---
+id: "pam_kafka_workshop"
+name: "Working with event driven processes in RHPAM"
+
+content:
+  url: https://raw.githubusercontent.com/kmacedovarela/pam-kafka-workshop.git/master
+
+modules:
+  activate:
+  - introduction
+  - env-setup
+  - creating-project
+  - start-event
