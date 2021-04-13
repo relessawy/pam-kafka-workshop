@@ -10,4 +10,5 @@ modules:
   - introduction
   - env-setup
   - creating-project
+  - lab-one-setup
   - start-event

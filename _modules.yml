@@ -7,6 +7,8 @@ modules:
   env-setup:
     name: Environment Setup
   creating-project:
-    name: Starting Processes with Events 
+    name: Starting Processes with x 
+  lab-one-setup:
+    name: Setup - Starting Processes with Events
   start-event:
     name: Starting Processes with Events 

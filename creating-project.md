@@ -11,9 +11,9 @@ When using business applications within event driven architectures, you can thin
 
 ## The alignment of tech evolution and business standards like BMPN
 
-When providing an implementation for a specification, each provider has the opportunity to deliver the solution of choice. It is not different for the BPMN specification. It allows different implementations for its diagram elements, and this is how jBPM delivers the most recent tech concepts by still allowing business users to use the modeling notation they are used to.
+When providing an implementation for a specification, each provider has the opportunity to deliver the solution of choice. It is not different for the BPMN specification. It allows different implementations for its diagram elements, and this is how RHPAM delivers the most recent tech concepts by still allowing business users to use the modeling notation they are used to.
 
-In jBPM (a.k.a. RHPAM), it is possible to make use of message events (starting, intermediate or ending) to interact via events. In this case, the KIE Server Kafka extension makes sure the communication occurs effectively with the event streaming brokers.
+In RHPAM, it is possible to make use of message events (starting, intermediate or ending) to interact via events. In this case, the KIE Server Kafka extension makes sure the communication occurs effectively with the event streaming brokers.
 
 ## Next Steps
 
