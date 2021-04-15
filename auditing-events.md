@@ -1,4 +1,4 @@
-# Auditing with Kafka
+# 6. Auditing with Kafka
 
 When using the Kafka extension in Red Hat Process Automation Manager, every transaction for processes, cases and tasks execution can be tracked via events. For each of these categories, we'll have an event emitted to a Kafka topic, in other words, we'll have three topics here: `jbpm-processes-events`, `jbpm-tasks-events`, `jbpm-cases-events`.
 
@@ -22,7 +22,7 @@ cp jbpm-event-emitters-kafka-7.48.0.Final-redhat-00004.jar $JBOSS_EAP/standalone
 
 Let's check the auditing behavior. 
 
-## Testing the feature
+## 6.1.Testing the feature
 
 To check the auditing capabilities you can start new processes, interact with human tasks and track the events that are being published on the `jbpm-tasks-events` and `jbpm-processes-events` topics. The event tracking are active also for processes that doesn't use _message events_ elements.
 
@@ -54,3 +54,6 @@ In this example we will check the behavior for our event driven business applica
 You should be able to see at every task change, a new event in the `jbpm-tasks-events`. Also, for every transaction commited for the process, you should see new events on the `jbpm-process-events`.
 
 By now, you have an event-driven process, that can be integrated within an event driven architecture, and furthermore, can be tracked and monitored in an asyncronous way by the usage of events. 
+
+
+The complete project can be found at: https://github.com/kmacedovarela/cc-limit-approval-app

@@ -1,4 +1,4 @@
-# Emmitting Events from Business Processes
+# 5. Emmitting Events from Business Processes
 
 In order to be able to finish processes based on new events, we will need to set up our environment.
 
@@ -7,7 +7,7 @@ In this setup we will:
 - Check the required configuration in the business project
 - Add bpmn components to emit messages
 
-## Emitting events in a business process
+## 5.1. Emitting events in a business process
 
 1. Now, we need to _End Message Events_  instead of two _End Events_. In Business Central, open the `cc-limit-approval-app` process.
 
@@ -26,7 +26,7 @@ In this setup we will:
 
 3. 	Save the process definition.
 
-## Configuring the business application
+## 5.2. Configuring the business application
 
 1. In business central, navigate to the **Project Settings -> Deployments -> Work Item handlers**: 
 
@@ -34,7 +34,7 @@ In this setup we will:
 
 Observe that there is a task configured named `Send Task`. In PAM 7.10 you need this configuration to be able to use any `Message Events` (ending and throwing) that would emit events. 
 
-## Consuming the events from Kafka topic using Kafka Consumer CLI
+## 5.3. Consuming the events from Kafka topic using Kafka Consumer CLI
 
 In order to validate if our process is emitting processes as we expect, we need to listen to the Kafka topics `requests-approved` and `requests-denied` to validate if the messages were emitted correctly.
 
@@ -51,7 +51,7 @@ In order to validate if our process is emitting processes as we expect, we need 
 	$ docker-compose exec kafka bin/kafka-console-consumer.sh --topic requests-approved --from-beginning --bootstrap-server localhost:9092
 	```
 
-## Testing the solution
+## 5.4. Testing the solution
 
 To test the solution, we will start a new process instance that will start, be automatically approved, and end without any human interaction. A new process instance should get started whenever you publish a new event on the `incoming-requests` topic, and, when there is an automatic approval, the process will end and publish an event to the `requests-approved` topic. Let's see this in action:
 

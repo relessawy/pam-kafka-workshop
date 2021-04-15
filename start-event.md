@@ -1,4 +1,4 @@
-# The Credit Card Raise Approval Project
+# 4. The Credit Card Raise Approval Project
 
 In this use case we should handle the automation of a credit card limit raise approval process. Most card issuers allow customers to request an increased credit limit through their websites, mobile apps or over the phone. Let’s consider we need to deliver this automation for a bank that wants to achieve a similar use case within an event-driven architecture.
 
@@ -13,7 +13,7 @@ Now, with the architecture shift, the service responsible for increasing the cre
 
 In this strategy we have a resilient way of communication between services where the broker is responsible for storing and providing the events. Adding to that, the tech team can evolve the solutions by using the features available in Kafka itself, like the possibility to replay all the events that happened in a specific time, in chronological order.
 
-## Importing the project
+## 4.1. Importing the project
 
 Let's import the existing project so we can start implementing the eventing capabilities. 
 
@@ -24,7 +24,7 @@ Let's import the existing project so we can start implementing the eventing capa
   ![]({% image_path bc-start-process.png %}){:width="600px"}
 
 
-# Reacting to events
+# 4.2. Reacting to events
 
 The first task we'll do, is to enable the existing process to react to events that are published in a specific topic. Whenever a new event is published, a new process instance should be created.
 
@@ -47,7 +47,7 @@ The first task we'll do, is to enable the existing process to react to events th
 6. Save the process. Your process should now look like this:
   ![]({% image_path bc-process-step1.png %}){:width="800px"}
 
-## Deploying the project
+## 4.3. Deploying the project
 
 Now, let's deploy and test the project. 
 
@@ -55,7 +55,7 @@ Now, let's deploy and test the project.
 
 2. Click on the "Deploy" button.
 
-## Testing the project
+## 4.4. Testing the project
 
 Let's publish a new event in the `incoming-requests` topic using the Kafka producer CLI tool. 
 

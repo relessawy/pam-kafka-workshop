@@ -1,4 +1,4 @@
-# Environment Setup
+# 2. Environment Setup
 
 **Red Hat Process Automation Manager**
 

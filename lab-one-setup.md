@@ -1,4 +1,4 @@
-# Red Hat PAM Kafka extension
+# 3. Red Hat PAM Kafka extension
 
 In order to be able to start processes based on new events, we will need to configure the Red Hat PAM Kafka extension.
 
@@ -8,7 +8,7 @@ The Red Hat PAM Kafka extension allows the KIE Server (process and decision engi
 
 In this setup steps, we will configure PAM only in the _server level_ - _we are not yet configuring the business project_. We will see how to configure the project as we move forward on the labs.
 
-## Enabling the Kafka extension
+## 3.1. Enabling the Kafka extension
 
 We can configure the engine to support different capabilities. In order to enable processes to be started through eventing, we only need to enable the extension via system property. 
 
