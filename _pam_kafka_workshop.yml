@@ -9,6 +9,7 @@ modules:
   activate:
   - introduction
   - env-setup
-  - creating-project
   - lab-one-setup
   - start-event
+  - emitting-events
+  - auditing-events
