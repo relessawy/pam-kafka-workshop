@@ -31,7 +31,7 @@ The first task we'll do, is to enable the existing process to react to events th
 1. To allow this process definition to be started with events, the first step is to change the start event to a *start message event*:
   ![]({% image_path bc-convert-start-event.png %}){:width="400px"}
 
-4. Whenever a customer make a new request (independently of the channel used) an event should be published on the `new-requests` Kafka `topic`. With that, a new process instance should be started whenever a new event is published in this topic. Let's configure the *start message event*: 
+4. Whenever a customer make a new request (independently of the channel used) an event should be published on the `incoming-requests` Kafka `topic`. With that, a new process instance should be started whenever a new event is published in this topic. Let's configure the *start message event*: 
   ![]({% image_path bc-start-message-config.png %}){:width="400px"}
 
   **Important:** we need to receive the data that is the event data. The KIE Server provides automatic marshalling to help us mapping the input directly to a _Data Object_ (a POJO). This project has an object named `LimitRaiseRequest.java` which we will use to receive the incoming data. 
