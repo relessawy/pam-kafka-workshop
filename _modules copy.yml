@@ -1,0 +1,16 @@
+config:
+    renderer: markdown
+
+modules:
+  introduction:
+    name: Introduction
+  env-setup:
+    name: Environment Setup
+  lab-one-setup:
+    name: Setup - Starting Processes with Events
+  start-event:
+    name: Starting Processes with Events 
+  emitting-events:
+    name: Emitting Events in Processes
+  auditing-events:
+    name: Auditing through events 
